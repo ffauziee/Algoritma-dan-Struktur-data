@@ -1,28 +1,4 @@
 public class BukuMain10 {
-    String judul, pengarang;
-    int halaman, stok, harga;
-
-    void tampilInformasi(){
-        System.out.println("Judul: " + judul);
-        System.out.println("Pengarang:: " + pengarang);
-        System.out.println("Jumlah Halaman: " + halaman);
-        System.out.println("Sisa Stok: " + stok);
-        System.out.println("Harga: " + harga);
-    }
-
-    void terjual(int jml){
-        if(stok > 0){
-            stok -= jml;
-        }
-    }
-
-    void restock(int jml){
-        stok += jml;
-    }
-
-    void gantiHarga(int hrg) {
-        harga = hrg;
-    }
     public static void main(String[] args) {
         Buku10 bk1 = new Buku10();
         bk1.judul = "Today Ends Tomorrow Comes";
@@ -35,6 +11,10 @@ public class BukuMain10 {
         bk1.terjual(5);
         bk1.gantiHarga(60000);
         bk1.tampilInformasi();
+
+        Buku10 bk2 = new Buku10("Self Reward", "Maheera Ayesha",160, 29, 59000);
+        bk2.terjual(11);
+        bk2.tampilInformasi();
     }
     
 }
