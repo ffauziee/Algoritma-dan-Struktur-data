@@ -13,10 +13,15 @@ public class BukuMain10 {
         bk1.tampilInformasi();
 
         Buku10 bk2 = new Buku10("Self Reward", "Maheera Ayesha",160, 29, 59000);
-        bk2.terjual(11);
+        System.out.println("Harga yang terjual: " + bk2.hitungHargaTotal(11));
+        
         bk2.tampilInformasi();
 
         Buku10 bukuFauzie = new Buku10("Harry Potter", "J.K Rowling", 3407, 100, 100000);
+        bukuFauzie.terjual(10);
+        bukuFauzie.hitungHargaTotal(10);
+        bukuFauzie.hitungDiskon();
+        bukuFauzie.hitungHargaBayar(10);
         bukuFauzie.tampilInformasi();
     }
     
