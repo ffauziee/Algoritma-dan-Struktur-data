@@ -1,9 +1,9 @@
 import java.util.Scanner;
-public class MainMahasiswa {
+public class MainMahasiswajb3 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Mahasiswa mhs[] = new Mahasiswa[3];
+        Mahasiswajb3 mhs[] = new Mahasiswajb3[3];
         double sum = 0;
 
         for(int i = 0; i < mhs.length; i++) {
@@ -17,7 +17,7 @@ public class MainMahasiswa {
             String newJK = sc.next();
             System.out.print("Masukkan IPK: ");
             double newIPK = sc.nextDouble();
-            mhs[i] = new Mahasiswa(newNama, newNim, newJK, newIPK);
+            mhs[i] = new Mahasiswajb3(newNama, newNim, newJK, newIPK);
             sum +=mhs[i].IPK;
         }
         for(int i = 0; i < mhs.length; i++){

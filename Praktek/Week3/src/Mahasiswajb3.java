@@ -1,8 +1,8 @@
-public class Mahasiswa {
-    String nim, nama, jenisKelamin;
-    double IPK;
+public class Mahasiswajb3 {
+     public String nim, nama, jenisKelamin;
+     public double IPK;
 
-    Mahasiswa(String na,String ni, String jk, double ipk){
+    Mahasiswajb3(String na,String ni, String jk, double ipk){
         nama = na;
         nim = ni;
         jenisKelamin = jk;

@@ -3,12 +3,11 @@ public class Limas {
     int tinggi;
     int sisiAlas;
 
-    Limas(int t, int sa){
-        tinggi = t;
-        sisiAlas = sa;
+    Limas(){
+        
     }
 
-    double hitungVolume(){
+    double hitungVolumeLimas(){
         double vol = 0;
         double luasAlas = sisiAlas*sisiAlas;
        
@@ -16,7 +15,7 @@ public class Limas {
         return vol;
     }
 
-    double hitungLuasPermukaan(){
+    double hitungLuasPermukaanLimas(){
         double lp = 0;
         double luasAlas = sisiAlas*sisiAlas;
         double sisiMiring = Math.sqrt(Math.pow(tinggi, 2) + Math.pow(0.5*sisiAlas, 2));
