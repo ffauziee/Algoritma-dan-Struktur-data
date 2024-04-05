@@ -12,19 +12,19 @@ public class BukuMain10 {
         System.out.println("========================================================");
         System.out.println("Masukkan data Buku secara urut dari kodeBuku Terkecil :");
         for (int i= 0; i < jumBuku; i++){
-            System.out.println("=====================");
+            System.out.println("========================================================");
             System.out.print("Kode Buku\t: ");
-            int kodeBuku = s1.nextInt();
-            System.out.println("Judul buku\t: ");
-            String judulBuku = s.nextLine();
-            System.out.println("Tahun Terbit\t: ");
+            String kodeBuku = s1.nextLine();
+            System.out.print("Judul buku\t: ");
+            String judulBuku = s1.nextLine();
+            System.out.print("Tahun Terbit\t: ");
             int tahunTerbit = s.nextInt();
-            System.out.println("Pengarang\t: ");
+            System.out.print("Pengarang\t: ");
             String pengarang = s1.nextLine();
-            System.out.println("Stock\t: ");
+            System.out.print("Stock\t\t: ");
             int stock = s.nextInt();
 
-            Buku10 m = new Buku10(kodeBuku, judulBuku, tahunTerbit, pengarang, stock);
+            Buku10_jobsheet6 m = new Buku10_jobsheet6(kodeBuku, judulBuku, tahunTerbit, pengarang, stock);
             data.tambah(m);
         }
 
@@ -35,11 +35,29 @@ public class BukuMain10 {
         System.out.println("________________________________________________________");
         System.out.println("________________________________________________________");
         System.out.println("Pencarian Data : ");
-        System.out.println("Masukkan kode Buku yang dicari :");
-        System.out.println("Kode Buku :");
-        int cari = s.nextInt();
-        System.out.println("Menggunakna sequential Search");
+        System.out.println("Masukkan kode Buku yang dicari");
+        System.out.print("Kode Buku: ");
+        String cari = s1.nextLine();
+        System.out.println("========================================================");
+        System.out.println("Menggunakan metode find Buku: ");
+        Buku10_jobsheet6 dataBuku10 = data.findBuku(cari);
+        if (dataBuku10 != null) {
+            dataBuku10.tampilDataBuku();
+        }else{
+            System.out.println("Buku tidak ditemukan");
+        }
+        System.out.println("========================================================");
+        System.out.println("Menggunakan sequential Search");
         int posisi = data.findSeqSearch(cari);
         data.tampilPosisi(cari, posisi);
+        data.TampilData(cari, posisi);
+        System.out.println("========================================================");
+        System.out.println("Menggunakan binary Search");
+        posisi = data.findBinarySearch(cari, 0, jumBuku -1);
+        data.tampilPosisi(cari, posisi);
+        data.TampilData(cari, posisi);
+
+        s.close();
+        s1.close();
     }
 }
