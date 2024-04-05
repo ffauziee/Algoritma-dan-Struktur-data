@@ -28,7 +28,7 @@ public class MobilMain {
             System.out.println("================================");
             mobilTerbesar.printData();
         } else {
-            System.out.println("Tidak ada mobil yang memenuhi kriteria");
+            System.out.println("Tidak ada mobil yang memenuhi");
         }
 
         sc.close();

@@ -69,8 +69,6 @@ public class Mobil {
         return mobilTerbesar;
     }
 
-    
-
     public void printData(){
         System.out.println("Nama: " + nama);
         System.out.println("CC mobil: " + cc);
