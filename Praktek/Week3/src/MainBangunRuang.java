@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class MainBangunRuang {
     public static void main(String[] args) {
         
@@ -11,7 +12,7 @@ public class MainBangunRuang {
             krc[i] = new kerucut();
             System.out.print("Masukkan jari-jari Kerucut ke-" + (i+1) + ": ");
             int a = sc.nextInt();
-            krc[i].jariJari=a;
+            krc[i].jariJarikrc=a;
             System.out.print("Masukkan sisi miring Kerucut ke-" + (i+1) + ": ");
             int b = sc.nextInt();
             krc[i].sisiMiring=b;
@@ -20,10 +21,10 @@ public class MainBangunRuang {
             lmssegiempat[i] = new Limas();
             System.out.print("Masukkan sisi alas limas segiempat sama sisi ke-" + (i+1) + ": ");
             int a = sc.nextInt();
-            lmssegiempat[i].sisiAlas = a;
+            lmssegiempat[i].sisiAlasLimas = a;
             System.out.print("Masukkan tinggi limas segiempat sama sisi ke-" + (i+1) + ": ");
             int b = sc.nextInt();
-            lmssegiempat[i].tinggi=b;
+            lmssegiempat[i].tinggiLimas=b;
         }
         for (int j = 0; j < bl.length; j++) {
             System.out.print("Masukkan jari-jari Bola ke-" + (j+1) + ": ");

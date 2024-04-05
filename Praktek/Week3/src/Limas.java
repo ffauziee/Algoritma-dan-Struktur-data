@@ -1,7 +1,7 @@
 
 public class Limas {
-    int tinggi;
-    int sisiAlas;
+    int tinggiLimas;
+    int sisiAlasLimas;
 
     Limas(){
         
@@ -9,18 +9,18 @@ public class Limas {
 
     double hitungVolumeLimas(){
         double vol = 0;
-        double luasAlas = sisiAlas*sisiAlas;
+        double luasAlas = sisiAlasLimas*sisiAlasLimas;
        
-        vol = (1.0/3.0)*luasAlas*tinggi;
+        vol = (1.0/3.0)*luasAlas*tinggiLimas;
         return vol;
     }
 
     double hitungLuasPermukaanLimas(){
         double lp = 0;
-        double luasAlas = sisiAlas*sisiAlas;
-        double sisiMiring = Math.sqrt(Math.pow(tinggi, 2) + Math.pow(0.5*sisiAlas, 2));
-        double luasSelimut  = 4* (0.5*0.5*sisiAlas*sisiMiring);
-        lp = luasAlas+luasSelimut;
+        double luasAlasLimas = sisiAlasLimas*sisiAlasLimas;
+        double sisiMiringLimas = Math.sqrt(Math.pow(tinggiLimas, 2) + Math.pow(0.5*sisiAlasLimas, 2));
+        double luasSelimut  = 4* (0.5*0.5*sisiAlasLimas*sisiMiringLimas);
+        lp = luasAlasLimas+luasSelimut;
         return lp;
     }
 }
