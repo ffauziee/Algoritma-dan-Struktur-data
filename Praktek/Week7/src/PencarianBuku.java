@@ -1,5 +1,5 @@
 public class PencarianBuku {
-    Buku10_jobsheet6 listBk[] = new Buku10_jobsheet6[5];
+    Buku10_jobsheet6 listBk[] = new Buku10_jobsheet6[3];
     int idx;
 
     void tambah(Buku10_jobsheet6 m) {
@@ -11,26 +11,42 @@ public class PencarianBuku {
         }
     }
 
-    void tampil(){
+    public PencarianBuku(){
+        for(int i = 0; i < listBk.length; i++) {
+            listBk[i] = null;
+        }
+    }
+
+    public void tampil(){
         for (Buku10_jobsheet6 m : listBk) {
             m.tampilDataBuku();
         }
     }
 
-    public int findSeqSearch(String cari){
-        int posisi = -1;
-        for (int i = 0; i < listBk.length; i++){
-            if(listBk[i].kodeBuku.equals(cari)){
-                posisi = i;
-                break;
+    public void bubbleSortBuku() {
+        for (int i = 0; i < listBk.length - 1; i++) {
+            for (int j = 0; j < listBk.length-i-1; j++) {
+                if (listBk[j].kodeBuku.compareTo(listBk[j+1].kodeBuku) > 0) {
+                    Buku10_jobsheet6 temp = listBk[j];
+                    listBk[j] = listBk[j + 1];
+                    listBk[j +1] = temp;
+                }
             }
         }
-        return posisi;
+    }
+
+    public int findSeqSearchjudul(String cari){
+        for (int i = 0; i < listBk.length; i++){
+            if(listBk[i].judulBuku.equalsIgnoreCase(cari)){
+                return i;
+            }
+        }
+        return -1;
     }
 
     public Buku10_jobsheet6 findBuku(String cari){
         for (Buku10_jobsheet6 buku : listBk) {
-            if (buku.kodeBuku.equals(cari)){
+            if (buku != null && buku.judulBuku.equalsIgnoreCase(cari)){
                 return buku;
             }
         }
@@ -57,19 +73,39 @@ public class PencarianBuku {
         }
     }
 
-    public int findBinarySearch(String cari, int left, int right){
-        while(left <= right){
-            int mid = left + (right - left) / 2;
-            if (cari.equals(listBk[mid].kodeBuku)){
+    public int findBinarySearch(String cari){
+        bubbleSortBuku();
+        int left = 0;
+        int right = idx -1;
+        while ( left <= right ){
+            int mid = left + (right - left) /2;
+            int cmp = cari.compareToIgnoreCase(listBk[mid].judulBuku);
+            if (cmp == 0) {
                 return mid;
-            } else if (cari.compareTo(listBk[mid].kodeBuku) < 0){
-                right = mid -1;
-            } else{
+            }else if(cmp < 0){
+                right = mid - 1;
+            } else {
                 left = mid + 1;
             }
         }
-
         return -1;
+    }
+
+    public void cariJudulbuku(String judul){
+        int count = 0;
+        for (int i = 0; i < idx; i++){
+            if(listBk[i].judulBuku.equalsIgnoreCase(judul)){
+                count++;
+            }
+        }
+
+        if (count == 0){
+            System.out.println("Judul buku tidak ditemukan");
+        } else if(count == 1){
+            System.out.println("Judul buku ditemukan");
+        } else {
+            System.out.println("Peringatan!! terdapat lebih dari satu buku dengan judul yang dicari");
+        }
     }
     
 }

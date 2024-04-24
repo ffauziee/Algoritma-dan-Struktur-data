@@ -7,7 +7,7 @@ public class BukuMain10 {
         Scanner s1 = new Scanner(System.in);
 
         PencarianBuku data =  new PencarianBuku();
-        int jumBuku = 5;
+        int jumBuku = 3;
         
         System.out.println("========================================================");
         System.out.println("Masukkan data Buku secara urut dari kodeBuku Terkecil :");
@@ -35,8 +35,8 @@ public class BukuMain10 {
         System.out.println("________________________________________________________");
         System.out.println("________________________________________________________");
         System.out.println("Pencarian Data : ");
-        System.out.println("Masukkan kode Buku yang dicari");
-        System.out.print("Kode Buku: ");
+        System.out.println("Masukkan Judul buku yang dicari");
+        System.out.print("Judul Buku: ");
         String cari = s1.nextLine();
         System.out.println("========================================================");
         System.out.println("Menggunakan metode find Buku: ");
@@ -48,12 +48,13 @@ public class BukuMain10 {
         }
         System.out.println("========================================================");
         System.out.println("Menggunakan sequential Search");
-        int posisi = data.findSeqSearch(cari);
+        int posisi = data.findSeqSearchjudul(cari);
         data.tampilPosisi(cari, posisi);
         data.TampilData(cari, posisi);
         System.out.println("========================================================");
         System.out.println("Menggunakan binary Search");
-        posisi = data.findBinarySearch(cari, 0, jumBuku -1);
+        posisi = data.findBinarySearch(cari);
+        data.cariJudulbuku(cari);
         data.tampilPosisi(cari, posisi);
         data.TampilData(cari, posisi);
 
