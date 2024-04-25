@@ -26,24 +26,6 @@ public class ClassBarangUTS {
         }
     }
 
-    // Metode untuk menampilkan rincian barang yang tersedia
-    public void tampilkanBarang() {
-        if (size > 0) {
-            System.out.println("Rincian barang:");
-            for (int i = 0; i < size; i++) {
-                System.out.println("================================================================");
-                System.out.printf("Kode Barang:\t %s\n", barang[i].kodeBarang);
-                System.out.printf("nama Barang: %s\n", barang[i].nama);
-                System.out.printf("Kategori Barang: %s\n", barang[i].kategori);
-                System.out.printf("Harga satuan Barang:\t %d\n", barang[i].hargaSatuan);
-                System.out.printf("Stock barang:\t %d\n", barang[i].stock);
-                System.out.printf("Kode %d: %s (kategori %s)\n", barang[i].kodeBarang, barang[i].nama, barang[i].kategori);
-            }
-        } else {
-            System.out.println("Tumpukan barang kosong.");
-        }
-    }
-
     // Bubble sort berdasarkan stock
     public void bubblesortBarang() {
         for (int i = 0; i < size - 1; i++) { 
@@ -71,7 +53,7 @@ public class ClassBarangUTS {
     public void tambahStock(String nama, int jumlah) {
         int idx = findNamaBarang(nama);
         if (idx != -1) { // Jika barang ditemukan
-            barang[idx].stock += jumlah; // Tambah stock
+            barang[idx].stock += jumlah; // Tambah stock pada index yang ditemukan
             System.out.println("Stock barang " + nama + " berhasil ditambahkan.");
         } else {
             System.out.println("Barang tidak ditemukan.");
@@ -83,7 +65,7 @@ public class ClassBarangUTS {
         int idx = findNamaBarang(nama);
         if (idx != -1) { // Jika barang ditemukan
             if (barang[idx].stock >= jumlah) { 
-                barang[idx].stock -= jumlah; // Kurangi stock
+                barang[idx].stock -= jumlah; // Kurangi stock pada index yang ditemukan
                 System.out.println("Stock barang " + nama + " berhasil dikurangi.");
             } else {
                 System.out.println("Stock barang tidak cukup.");
