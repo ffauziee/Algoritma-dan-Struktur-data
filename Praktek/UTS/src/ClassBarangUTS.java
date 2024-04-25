@@ -4,7 +4,7 @@ public class ClassBarangUTS {
     int size;
 
     public ClassBarangUTS(int kapasitas) {
-        max = kapasitas;
+        max = kapasitas; //kapasitas maksimal array of objects
         barang = new BarangUTS[max];
         size = 0; // index saat ini
     }

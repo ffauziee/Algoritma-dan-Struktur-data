@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class UtsMain {
     public static void main(String[] args) {
         // Membuat instance ClassBarangUTS dengan kapasitas 10
-        ClassBarangUTS barang = new ClassBarangUTS(9);
+        ClassBarangUTS barang = new ClassBarangUTS(10);
         
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
