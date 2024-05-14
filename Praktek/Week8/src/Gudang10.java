@@ -39,6 +39,7 @@ public class Gudang10 {
             Barang10 delete = tumpukan[top];
             top--;
             System.out.println("Barang " + delete.nama + "diambil dari gudang");
+            System.out.println("kode unik dalam biner: " + konversiDesimalBiner(delete.kode));
             return delete;
         } else {
             System.out.println("Tumpukan barang kosong");
@@ -69,6 +70,54 @@ public class Gudang10 {
     }
 
     public void peek(){
-        System.out.println("Barang teratas adalah " + tumpukan[top].nama);
+        if(!cekKosong()){
+            System.out.printf("Barang teratas adalah %s dengan kategori %s ", tumpukan[top].nama, tumpukan[top].kategori);
+        }else{
+            System.out.println("Gudang masih kosong");
+        }
+    }
+
+    public Barang10 lihatBarangTerbawah(){
+        if (!cekKosong()){
+        Barang10 barangTerbawah = tumpukan[0];
+        System.out.printf("Barang terbawah adalah %s, dengan kategori %s", barangTerbawah.nama, barangTerbawah.kategori);
+        return barangTerbawah;
+        } else{
+            System.out.println("Gudang masih kosong");
+            return null;
+        }
+    }
+
+    public Barang10 cariBarang(String kodeNama){
+        for (int i=0 ; i<= top; i++){
+            if(!cekKosong()){
+                Barang10 caribarang = tumpukan[i];
+                if(caribarang.nama.equalsIgnoreCase(kodeNama) || caribarang.kode == Integer.parseInt(kodeNama)){
+                    System.out.printf("Barang ditemukan: %s, dalam kategori %s", caribarang.nama, caribarang.kategori);
+                    return caribarang;
+                }else{
+                    System.out.println("Barang tidak ditemukan");
+                }
+            }else {
+                System.out.println("Gudang masih kosong");
+                return null;
+            }
+        }
+        System.out.println("Barang tidak ditemukan");
+        return null;
+    }
+
+    public String konversiDesimalBiner(int kode){
+        StackKonversi10 stack = new StackKonversi10();
+        while (kode != 0){
+            int sisa = kode % 2;
+            stack.push(sisa);
+            kode = kode/2;
+        }
+        String biner = new String();
+        while(!stack.isEmpty()){
+            biner += stack.pop();
+        }
+        return biner;
     }
 }

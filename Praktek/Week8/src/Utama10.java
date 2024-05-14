@@ -10,7 +10,9 @@ public class Utama10 {
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampil stack barang");
             System.out.println("4. Cek barang teratas");
-            System.out.println("5. Keluar");
+            System.out.println("5. Cek barang terbawah");
+            System.out.println("6. Cari barang");
+            System.out.println("7. Keluar");
             System.out.print("Pilih: ");
             int pilihan = sc.nextInt();
             sc.nextLine();
@@ -30,7 +32,6 @@ public class Utama10 {
                 case 2:
                     gudang.ambilBarang();
                     break;
-
                 case 3: 
                     gudang.tampilkanBarang();
                     break;
@@ -38,7 +39,15 @@ public class Utama10 {
                     gudang.peek();
                     break;
                 case 5:
+                    gudang.lihatBarangTerbawah();
                     break;
+                case 6:
+                    System.out.print("Masukkan nama atau kode barang yang dicari: ");
+                    String cari = sc.nextLine();
+                    gudang.cariBarang(cari);
+                    break;
+                case 7:
+                    System.exit(0);
                 default:
                     System.out.println("pilihan tidak valdi, mohon coba lagi");
                     break;

@@ -11,5 +11,7 @@ public class Nasabah {
         this.saldo = saldo;
     }
 
-    
+    public Nasabah(){
+        
+    }
 }
