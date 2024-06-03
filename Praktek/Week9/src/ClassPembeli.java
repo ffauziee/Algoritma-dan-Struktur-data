@@ -2,8 +2,6 @@ public class ClassPembeli {
     Pembeli[] data;
     int front, rear, size, max;
 
-    
-
     public ClassPembeli(int n){
         max = n;
         data = new Pembeli[max];

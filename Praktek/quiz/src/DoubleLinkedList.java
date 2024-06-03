@@ -1,4 +1,3 @@
-package quiz2mi1a;
 
 public class DoubleLinkedList {
     Node head, tail;

@@ -1,4 +1,3 @@
-package quiz2mi1a;
 
 public class Node {
     int data;

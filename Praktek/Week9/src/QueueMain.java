@@ -13,7 +13,6 @@ public class QueueMain {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.println("Masukkan kapasitas queue: ");
         int n = sc.nextInt();
         ClassQueue q = new ClassQueue(n);

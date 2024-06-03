@@ -1,8 +1,6 @@
- public class ClassNasabah {
+public class ClassNasabah {
     Nasabah[] data;
     int front, rear, size, max;
-
-    
 
     public ClassNasabah(int n){
         max = n;
@@ -30,6 +28,14 @@
     public void peek(){
         if (!isEmpty()){
             System.out.println("Antrian terdepan: "+ data[front].norek+ " "+ data[front].nama+ " "+ data[front].alamat+ " "+ data[front].umur+ " "+ data[front].saldo);
+        } else {
+            System.out.println("Queue masih kosong");
+        }
+    }
+
+    public void peekRear(){
+        if (!isEmpty()){
+            System.out.println("Antrian terbelakang: "+ data[rear].norek+ " "+ data[rear].nama+ " "+ data[rear].alamat+ " "+ data[rear].umur+ " "+ data[rear].saldo);
         } else {
             System.out.println("Queue masih kosong");
         }

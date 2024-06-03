@@ -1,5 +1,3 @@
-package quiz2mi1a;
-
 public class Main {
     public static void main(String[] args){
         DoubleLinkedList dll = new DoubleLinkedList();
@@ -18,7 +16,7 @@ public class Main {
         dll.printFromTail();
         //lanjutkan dengan memanggil method merge, split
         //jawaban
-        // Demonstrating the split method
+        // method split
         DoubleLinkedList dll3 = new DoubleLinkedList();
         dll3.addFirst(2);
         dll3.addFirst(3);
@@ -34,7 +32,7 @@ public class Main {
         split(dll3);
     }
     //No. 3 Kode Ganjil
-    public static void merge(DoubleLinkedList dll1,DoubleLinkedList dll2){
+    public static void merge(){
         //complete this method
     }
     //No. 3 Kode Genap

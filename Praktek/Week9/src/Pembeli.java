@@ -9,8 +9,4 @@ public class Pembeli {
     Pembeli(){
 
     }
-
-    public String getNama(){
-        return nama;
-    }
 }

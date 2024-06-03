@@ -8,9 +8,10 @@ public class MainPembeli {
         System.out.println("1. Antrian baru");
         System.out.println("2. Antrian keluar");
         System.out.println("3. Cek antrian terdepan");
-        System.out.println("4. Cek semua antrian");
-        System.out.println("5. Cek posisi pembeli");
-        System.out.println("6. Keluar");
+        System.out.println("4. Cek posisi terbelakang");
+        System.out.println("5. Cek semua antrian");
+        System.out.println("6. Cek posisi pembeli");
+        System.out.println("7. Keluar");
         System.out.println("------------------------------");
         System.out.print("Pilih Menu: ");
     }
@@ -49,23 +50,27 @@ public class MainPembeli {
                     break;
 
                 case 4:
-                    antri.print();
+                    antri.peekRear();
                     break;
 
                 case 5:
+                    antri.print();
+                    break;
+
+                case 6:
                     System.out.print("Masukkan nama pembeli: ");
                     String searchName = sc1.nextLine();
                     antri.peekPosition(searchName);
                     break;
 
-                case 6:
+                case 7:
                     System.out.println("Keluar dari program.");
-                    break;
+                    System.exit(0);;
 
                 default:
                     System.out.println("Pilihan tidak valid. Silakan pilih lagi.");
             }
-        } while (pilih != 6);
+        } while (pilih != 7);
 
         sc1.close();
         sc2.close();
