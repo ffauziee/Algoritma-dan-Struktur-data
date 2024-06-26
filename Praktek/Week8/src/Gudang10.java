@@ -69,11 +69,14 @@ public class Gudang10 {
         }
     }
 
-    public void peek(){
+    public Barang10 lihatBarangTeratas(){
         if(!cekKosong()){
-            System.out.printf("Barang teratas adalah %s dengan kategori %s ", tumpukan[top].nama, tumpukan[top].kategori);
+            Barang10 barangTeratas = tumpukan[top];
+            System.out.println("barang teratas: " + barangTeratas.nama);
+            return barangTeratas;
         }else{
             System.out.println("Gudang masih kosong");
+            return null;
         }
     }
 

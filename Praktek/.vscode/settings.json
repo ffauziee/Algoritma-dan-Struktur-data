@@ -6,7 +6,9 @@
         "Week11/src",
         "UTS/src",
         "quiz\\src",
-        "UAS\\src"
+        "UAS\\src",
+        "Quiz2",
+        "Week8\\src"
     ],
     "java.project.referencedLibraries": []
 }

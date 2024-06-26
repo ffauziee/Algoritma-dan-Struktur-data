@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class Utama10 {
     public static void main(String[] args) {
-        Gudang10 gudang = new Gudang10(7);
         Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan kapasitas queue: ");
+        int jumlah = sc.nextInt();
+        Gudang10 gudang = new Gudang10(jumlah);
         while (true) {
             System.out.println("\nMenu:");
             System.out.println("1. Tambah barang");
@@ -36,7 +38,7 @@ public class Utama10 {
                     gudang.tampilkanBarang();
                     break;
                 case 4:
-                    gudang.peek();
+                    gudang.lihatBarangTeratas();
                     break;
                 case 5:
                     gudang.lihatBarangTerbawah();
